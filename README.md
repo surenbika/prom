@@ -1,4 +1,4 @@
-# prometheus setup
+# Prometheus setup
 
 This is a sample Prometheus with cAdvisor and Grafana setup to monitor containers on AWS, using ec2 discovery
 
@@ -17,7 +17,7 @@ The Grafana Dashboard is now accessible via: http://<Host IP Address>:3000 for e
 username - admin password - foobar (Password is stored in the config.monitoring env file)
 ```
 
-Post Installation Configuration
+# Post Installation Configuration
 ```bash
 Now we need to create the Prometheus Datasource in order to connect Grafana to Prometheus
 
