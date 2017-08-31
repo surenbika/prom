@@ -5,7 +5,7 @@ This is a sample Prometheus with cAdvisor and Grafana setup to monitor conatiner
 # Pre-requisites
 
 ```bash
-Prerequisite wordpress app is built, spurce code present on https://github.com/surenbika/cake.git
+Sample wordpress app is built, source code present on https://github.com/surenbika/cake.git
 ```
 
 # To deploy prometheus, cadvisor and grafana stack
