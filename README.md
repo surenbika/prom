@@ -1,6 +1,6 @@
 #prometheus setup
 
-This is a sample Prometheus with cAdvisor and Grafana setup to monitor conatiners on AWS, using ec2_discovery
+This is a sample Prometheus with cAdvisor and Grafana setup to monitor containers on AWS, using ec2 discovery
 
 # Pre-requisites
 
