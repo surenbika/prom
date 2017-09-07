@@ -24,7 +24,6 @@ services:
       - 9090:9090
     links:
       - cadvisor:cadvisor
-      - alertmanager:alertmanager
     depends_on:
       - cadvisor
     networks:
@@ -46,21 +45,6 @@ services:
     networks:
       - back-tier
     deploy:
-  alertmanager:
-    image: prom/alertmanager
-    ports:
-      - 9093:9093
-    volumes:
-      - ./alertmanager/:/etc/alertmanager/
-    networks:
-      - back-tier
-    command:
-      - '-config.file=/etc/alertmanager/config.yml'
-      - '-storage.path=/alertmanager'
-    deploy:
-      placement:
-        constraints:
-          - node.hostname == Main
   cadvisor:
     image: google/cadvisor
     volumes:
