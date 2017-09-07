@@ -18,8 +18,7 @@ services:
     command:
       - '-config.file=/etc/prometheus/prometheus.yml'
       - '-storage.local.path=/prometheus'
-      - '-alertmanager.url=http://alertmanager:9093'
-    expose:
+     expose:
       - 9090
     ports:
       - 9090:9090
@@ -42,8 +41,8 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
     command: '-collector.procfs=/host/proc -collector.sysfs=/host/sys -collector.filesystem.ignored-mount-points="^(/rootfs|/host|)/(sys|proc|dev|host|etc)($$|/)" collector.filesystem.ignored-fs-types="^(sys|proc|auto|cgroup|devpts|ns|au|fuse\.lxc|mqueue)(fs|)$$"'
-    expose:
-      - 9100
+    ports:
+      - 9100:9100
     networks:
       - back-tier
     deploy:
@@ -69,8 +68,8 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-    expose:
-      - 8080
+    ports:
+      - 8080:8080
     networks:
       - back-tier
     deploy:
