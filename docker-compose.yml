@@ -26,10 +26,6 @@ services:
       - cadvisor
     networks:
       - back-tier
-    deploy:
-      placement:
-        constraints:
-          - node.hostname == Main
   node-exporter:
     container_name: node-exporter
     image: prom/node-exporter
@@ -42,7 +38,6 @@ services:
       - 9100:9100
     networks:
       - back-tier
-    deploy:
   cadvisor:
     image: google/cadvisor
     volumes:
@@ -54,9 +49,6 @@ services:
       - 8080:8080
     networks:
       - back-tier
-    deploy:
-      mode: global
-
   grafana:
     image: grafana/grafana
     depends_on:
